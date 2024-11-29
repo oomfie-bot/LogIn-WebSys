@@ -34,12 +34,7 @@ $role = 'user';
 // if ($role !== 'user' && $role !== 'admin') {
 //   die("Invalid role selected");
 // }
-$role = 'user'
 
-// $role = $_POST["role"];
-// if ($role !== 'user' && $role !== 'admin') {
-//   die("Invalid role selected");
-// }
 
 //requires a directory
 $mysqli = require __DIR__ . "/database.php";
