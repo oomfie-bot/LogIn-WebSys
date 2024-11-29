@@ -28,6 +28,12 @@ if($_POST["password"] != $_POST["confirm-password"]){
 
 $password_hash = password_hash($_POST["password"], PASSWORD_DEFAULT);
 
+$role = 'user';
+
+// $role = $_POST["role"];
+// if ($role !== 'user' && $role !== 'admin') {
+//   die("Invalid role selected");
+// }
 $role = 'user'
 
 // $role = $_POST["role"];
