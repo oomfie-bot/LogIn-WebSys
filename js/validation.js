@@ -21,16 +21,17 @@ validation
     },
 
     {
-      validator:(value) =>{
+      validator: (value) => {
+        if (!value) {
+          return true; // Skip validation if the field is empty
+        }
         return fetch("validate-email.php?email=" + encodeURIComponent(value))
-
-        .then(function(response){
-          return response.json()
-        })
-
-        .then(function(json){
-          return json.available;
-        });
+          .then(function(response) {
+            return response.json();
+          })
+          .then(function(json) {
+            return json.available;
+          });
       },
       errorMessage: "Email already taken"
     }
