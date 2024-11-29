@@ -1,26 +1,21 @@
 const validation = new JustValidate("#signupForm");
 
 validation
-
   .addField("#name", [
-
     {
-      rule: "required"
+      rule: "required",
+      errorMessage: "Name is required"
     }
-
   ])
-
-  .addField("#email",[
-
+  .addField("#email", [
     {
       rule: "required",
       errorMessage: "Email is required"
     },
-
     {
-      rule: "email"
+      rule: "email",
+      errorMessage: "Email is invalid"
     },
-
     {
       validator: (value) => {
         if (!value) {
@@ -36,29 +31,25 @@ validation
       },
       errorMessage: "Email already taken"
     }
-
   ])
-
-  .addField("#password",[
-
+  .addField("#password", [
     {
-      rule: "required"
+      rule: "required",
+      errorMessage: "Password is required"
     },
-
     {
-      rule: "password"
+      rule: "password",
+      errorMessage: "Password is invalid"
     }
   ])
-
-  .addField("#confirm-password",[
+  .addField("#confirm-password", [
     {
-      validator: (value, fields) =>{
+      validator: (value, fields) => {
         return value === fields["#password"].elem.value;
       },
       errorMessage: "Passwords should match"
     }
   ])
-
-  .onSuccess((event)=>{
+  .onSuccess((event) => {
     document.getElementById("signupForm").submit();
   });
