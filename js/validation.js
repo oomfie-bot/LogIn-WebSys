@@ -21,7 +21,7 @@ validation
     },
 
     {
-      validator:(value) => () =>{
+      validator:(value) =>{
         return fetch("validate-email.php?email=" + encodeURIComponent(value))
 
         .then(function(response){
