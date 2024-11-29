@@ -43,7 +43,11 @@ if ($result->num_rows > 0) {
     die("Email already taken");
 }
 
-$role = 'user'; // Set default role to 'user'
+// $role = 'user';
+$role = $_POST["role"];
+ if ($role !== 'user' && $role !== 'admin') {
+   die("Invalid role selected");
+ }
 
 $sql = "INSERT INTO users (fullname, email, password_hash, role) VALUES (?, ?, ?, ?)";
 $stmt = $mysqli->stmt_init();
