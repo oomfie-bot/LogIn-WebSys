@@ -13,7 +13,8 @@ validation
   .addField("#email",[
 
     {
-      rule: "required"
+      rule: "required",
+      errorMessage: "Email is required"
     },
 
     {
