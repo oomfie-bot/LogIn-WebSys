@@ -1,7 +1,7 @@
 <?php
 
 $host = "localhost";
-$dbname = "db_websys";
+$dbname = "db_abc";
 $username = "root";
 $password = "";
 
